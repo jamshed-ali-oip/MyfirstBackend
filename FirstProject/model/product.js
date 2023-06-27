@@ -20,12 +20,9 @@ const productSchema = new mongoose.Schema({
         type: String,
         enum: {
             values: ["apple", "samsung", "xiomi", "realme"],
-            message: `{values} is not avaialable`
+            message: `value is not avaialable`
         }
     },
-    created_at: {
-        type: Date,
-        default: Date.now()
-    }
-})
+}, { timestamps: true, versionKey: false }
+)
 module.exports = mongoose.model("Product", productSchema)
